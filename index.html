@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<!--
+  Little Red List — the one page the App Store requires.
+
+  App Store Connect will not accept a submission without a Support URL and a
+  Privacy Policy URL. Both fields can point at this page; the privacy section
+  has its own anchor (#privacy) if you would rather give them separate links.
+
+  The support address (littleredlist.app@gmail.com) and the policy date
+  (1 October 2026) are filled in. If the page goes up on a later day, change
+  the date to match. One placeholder is left, marked in the page with a dotted
+  underline:
+
+    [APP STORE LINK]    once the app is on sale (the button stays hidden
+                        until you fill it in - search for "store-link")
+
+  The seller's name is filled in as Carol Murphy, which is what an individual
+  enrolment publishes. Change it here and in the copyright line if the account
+  turns out to be in a different name.
+
+  No fonts, scripts or images are loaded from anywhere. The page is one file
+  and works offline, which is in keeping with an app that makes no network
+  connections at all.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Little Red List</title>
+<meta name="description" content="A daily practice tool based on It Works, the short book published in 1926 by R. H. Jarrett. Private by design.">
+<style>
+  :root {
+    --paper: #FBFAF7;
+    --sheet: #FFFFFF;
+    --ink: #17150F;
+    --muted: #6B655C;
+    --red: #D8261F;
+    --faint: #E3DED7;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #151413;
+      --sheet: #1F1E1C;
+      --ink: #F2F0ED;
+      --muted: #9A948D;
+      --red: #E8483F;
+      --faint: #35322E;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0 20px 80px;
+    background: var(--paper);
+    color: var(--ink);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  main { max-width: 34rem; margin: 0 auto; }
+
+  /* The book's voice, and the app's own headings: a serif, as in the app. */
+  h1, h2, .lede, blockquote {
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  }
+
+  header {
+    text-align: center;
+    padding: 72px 0 8px;
+  }
+
+  .mark {
+    width: 64px; height: 64px;
+    margin: 0 auto 26px;
+    border-radius: 50%;
+    background: var(--red);
+    display: grid;
+    place-items: center;
+  }
+  /* The app's own mark: the check it draws when a reading is kept. */
+  .mark svg { width: 30px; height: 30px; display: block; }
+
+  h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+  h1 .red { color: var(--red); }
+
+  .lede {
+    font-size: 1.22rem;
+    line-height: 1.5;
+    margin: 20px auto 0;
+    max-width: 26rem;
+  }
+
+  .credit {
+    color: var(--muted);
+    font-size: 0.86rem;
+    margin: 16px auto 0;
+    max-width: 26rem;
+  }
+
+  .store-link {
+    display: none; /* shown once the href is filled in — see the note below */
+    margin: 30px auto 0;
+    padding: 13px 30px;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 14px;
+    font-weight: 600;
+    width: max-content;
+  }
+
+  h2 {
+    font-size: 1.32rem;
+    font-weight: 700;
+    margin: 56px 0 14px;
+    padding-top: 30px;
+    border-top: 1px solid var(--faint);
+  }
+  h3 {
+    font-size: 1rem;
+    margin: 28px 0 6px;
+  }
+
+  p, li { color: var(--ink); }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 1.15rem; }
+  li { margin-bottom: 7px; }
+
+  a { color: var(--red); }
+
+  .card {
+    background: var(--sheet);
+    border: 1px solid var(--faint);
+    border-radius: 18px;
+    padding: 20px 22px;
+    margin: 20px 0;
+  }
+
+  .fill-me {
+    border-bottom: 2px dotted var(--red);
+    font-weight: 600;
+  }
+
+  .quiet { color: var(--muted); font-size: 0.9rem; }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 26px;
+    border-top: 1px solid var(--faint);
+    color: var(--muted);
+    font-size: 0.86rem;
+    text-align: center;
+  }
+</style>
+</head>
+
+<body>
+<main>
+
+  <header>
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"
+           stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 12.5l5.5 5.5L20 6.5"/>
+      </svg>
+    </div>
+
+    <h1>Little <span class="red">Red</span> List</h1>
+
+    <p class="lede">Write down what you want. Read it morning, noon and night.</p>
+
+    <p class="credit">
+      A daily practice tool based on <em>It Works</em>, the short book published
+      in 1926 by R.&nbsp;H.&nbsp;Jarrett. The app is independent and is not
+      connected to any publisher of the book.
+    </p>
+
+    <!-- Once the app is on sale: put the App Store address in href, and change
+         the style below from "none" to "block". -->
+    <a class="store-link" href="[APP STORE LINK]" style="display:none">
+      Get it on the App Store
+    </a>
+  </header>
+
+
+  <h2 id="about">What the app does</h2>
+
+  <p>
+    You keep a list of what you want, in the order it matters to you. The app
+    reminds you three times a day &mdash; morning, noon and night &mdash; and
+    walks you through your list one item at a time.
+  </p>
+
+  <ul>
+    <li>Your list, in your order, rewritten as often as you like. Every wording
+      you have ever used is kept.</li>
+    <li>Three reminders a day, at times you choose. A reading you have already
+      done is not reminded about again.</li>
+    <li>A record of the practice you have actually kept &mdash; including the
+      readings that fall outside your chosen times.</li>
+    <li>Somewhere to keep the things that came about, with the thanks you wrote
+      for them.</li>
+    <li>Optional waves, rain or static to read to, made by the app as it plays.</li>
+  </ul>
+
+  <p class="quiet">
+    The ideas behind the practice are the author's, set out in his book. The app
+    is a tool for keeping the practice, and it makes no promises about what
+    follows from it.
+  </p>
+
+
+  <h2 id="support">Support</h2>
+
+  <p>
+    If something is broken, or the app does something you did not expect, please
+    write to <a href="mailto:littleredlist.app@gmail.com">littleredlist.app@gmail.com</a>. It is read by a person.
+  </p>
+
+  <div class="card">
+    <h3>What helps when reporting a problem</h3>
+    <ul>
+      <li>What you were doing, and what happened instead.</li>
+      <li>Which screen you were on.</li>
+      <li>Your iPhone model and iOS version &mdash; Settings &rarr; General
+        &rarr; About.</li>
+      <li>A screenshot, if the problem is something you can see.</li>
+    </ul>
+    <p class="quiet" style="margin-bottom:0">
+      The app keeps no logs and sends nothing anywhere, so a description from
+      you is the only way a problem can be found. That is the trade for an app
+      that watches nothing.
+    </p>
+  </div>
+
+  <h3>Asking for something new</h3>
+  <p>
+    Requests are welcome at the same address. Saying <em>what you were trying to
+    do</em> is more useful than naming a feature &mdash; there is often a
+    simpler answer than the one either of us would have thought of first.
+  </p>
+
+
+  <h2 id="privacy">Privacy policy</h2>
+
+  <p class="quiet">Effective 1 October 2026.</p>
+
+  <p>
+    <strong>Little Red List collects nothing about you.</strong> There is no
+    account to make, no sign-in, and nothing to switch off.
+  </p>
+
+  <h3>What stays on your iPhone</h3>
+  <p>
+    Everything you write &mdash; your list, every wording it has had, your
+    thanks, your reading times and your settings &mdash; is stored on your
+    iPhone and nowhere else. It is never sent to us or to anybody else.
+  </p>
+
+  <h3>What the app does not do</h3>
+  <ul>
+    <li>It has no accounts and no sign-in.</li>
+    <li>It contains no analytics, no tracking and no advertising.</li>
+    <li>It contains no third-party code of any kind.</li>
+    <li>It makes no network connections. The app works the same with the phone
+      in aeroplane mode.</li>
+  </ul>
+
+  <h3>Your backups</h3>
+  <p>
+    If you back up your iPhone to iCloud or to a computer, your list is part of
+    that backup, in the same way your notes and photos are. Those backups are
+    handled by Apple under Apple's terms, not by us, and we cannot read them.
+  </p>
+
+  <h3>Crash reports</h3>
+  <p>
+    If you have chosen to share diagnostics with developers in your iPhone's
+    settings, Apple may pass on a report when an app closes unexpectedly. Those
+    reports come from Apple, describe only what the software was doing at the
+    time, and contain nothing you have written.
+  </p>
+
+  <!-- Enable this section once the in-app purchase exists. Until then it would
+       describe something the app does not have. -->
+  <!--
+  <h3>Purchases</h3>
+  <p>
+    Unlocking the app is handled entirely by Apple. We never see your payment
+    details, and Apple tells us only that a purchase was made.
+  </p>
+  -->
+
+  <h3>Children</h3>
+  <p>
+    The app is not directed at children, and since it collects nothing, it
+    collects nothing about children either.
+  </p>
+
+  <h3>Deleting everything</h3>
+  <p>
+    Settings inside the app has a <strong>Start over</strong> option that erases
+    everything the app has saved. Deleting the app from your iPhone removes it
+    all as well. Because nothing was ever sent anywhere, there is nothing else
+    to ask us to delete.
+  </p>
+
+  <h3>Changes to this policy</h3>
+  <p>
+    If this ever changes, the new version will appear on this page with a new
+    date at the top.
+  </p>
+
+  <h3>Getting in touch</h3>
+  <p>
+    Questions about privacy go to the same place as everything else:
+    <a href="mailto:littleredlist.app@gmail.com">littleredlist.app@gmail.com</a>.
+  </p>
+
+
+  <h2 id="book">About the book</h2>
+  <p>
+    <em>It Works</em> was published in 1926 by R.&nbsp;H.&nbsp;Jarrett, who
+    wrote under the initials RHJ. It is a pamphlet of a few thousand words, and
+    it asks for one thing: write down what you want, in order of importance, and
+    read that list three times a day.
+  </p>
+  <p>
+    The book is not inside the app, and the passages the app shows are short
+    extracts. A scan of the whole thing is free to read at the
+    <a href="https://archive.org/details/RHJarrett">Internet Archive</a>.
+  </p>
+
+
+  <footer>
+    <p>
+      Little Red List &mdash; made by Carol Murphy.<br>
+      Independent, and not connected to any publisher of <em>It Works</em>.
+    </p>
+  </footer>
+
+</main>
+</body>
+</html>
